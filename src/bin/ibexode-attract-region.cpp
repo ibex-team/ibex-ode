@@ -1,9 +1,5 @@
 #include "ibex.h"
 
-#ifndef _IBEX_WITH_ODE_
-#error "You need to install the ODE plugin (--with-ode)."
-#endif
-
 #include "args.hxx"
 
 #include <sstream>
