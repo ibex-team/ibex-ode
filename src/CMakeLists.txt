@@ -2,10 +2,10 @@
 # First example: compiling a library that depends on libibex
 ################################################################################
 # source files of libibex-ode
-list (APPEND SRC ${CMAKE_CURRENT_SOURCE_DIR}/ibex_AttractingRegion.cpp
-                 ${CMAKE_CURRENT_SOURCE_DIR}/ibex_AttractingRegion.h
-                 ${CMAKE_CURRENT_SOURCE_DIR}/ibex_StructLyapunov.cpp
-                 ${CMAKE_CURRENT_SOURCE_DIR}/ibex_StructLyapunov.h
+list (APPEND SRC ${CMAKE_CURRENT_SOURCE_DIR}/ibex_AttractionRegion.cpp
+                 ${CMAKE_CURRENT_SOURCE_DIR}/ibex_AttractionRegion.h
+                 ${CMAKE_CURRENT_SOURCE_DIR}/ibex_P_StructLyapunov.cpp
+                 ${CMAKE_CURRENT_SOURCE_DIR}/ibex_P_StructLyapunov.h
 
                  # Add more source files here.
                  # For most plugins, the rest can be left as is.

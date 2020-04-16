@@ -8,10 +8,10 @@ message (STATUS "Found Ibex version ${IBEX_VERSION}")
 ibex_init_common () # Ibex should have installed this function
 
 # check if Ibex was compiled with an linear programming library
-ibex_check_have_lp_lib (HAVE_LP_LIB)
-if (NOT HAVE_LP_LIB)
-  message (FATAL_ERROR "A Linear Programming library is needed for this plugin")
-endif ()
+#ibex_check_have_lp_lib (HAVE_LP_LIB)
+#if (NOT HAVE_LP_LIB)
+#  message (FATAL_ERROR "A Linear Programming library is needed for this plugin")
+#endif ()
 
 ################################################################################
 # Compile sources

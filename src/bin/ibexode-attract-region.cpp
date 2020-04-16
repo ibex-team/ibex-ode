@@ -1,5 +1,6 @@
 #include "ibex.h"
-
+#include "ibex_P_StructLyapunov.h"
+#include "ibex_AttractionRegion.h"
 #include "args.hxx"
 
 #include <sstream>
