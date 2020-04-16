@@ -106,8 +106,12 @@ int main(int argc, char** argv) {
 		Interval c1gh=l.find_level_set_dichotomy(AttractionRegion::HANSEN, time, CMAX, eps_f);
 		cout << "c_dichotomy_hansen=     " << c1gh << " t=" << (1000.*(build_time+time)) << "ms" << endl;
 
-		Interval c1d=l.find_level_set_dichotomy(AttractionRegion::HESSIAN, time, CMAX, eps_f);
-		cout << "c_dichotomy_hessian=    " << c1d << " t=" << (1000.*(build_time+time)) << "ms" << endl;
+		try {
+			Interval c1d=l.find_level_set_dichotomy(AttractionRegion::HESSIAN, time, CMAX, eps_f);
+			cout << "c_dichotomy_hessian=    " << c1d << " t=" << (1000.*(build_time+time)) << "ms" << endl;
+		} catch(ExprDiffException&) {
+			cout << "c_dichotomy_hessian=    (skipped: could not differentiate twice v(.))" << endl;
+		}
 
 		Vector feasible(struc.xhat.size());
 		int nb_cells;
