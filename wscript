@@ -20,9 +20,6 @@ def configure (conf):
 		conf.end_msg ("not used")
 		return
 	
-	if not conf.options.WITH_OPTIM:
-		conf.fatal ("ODE plugin requires IbexOpt (--with-optim)")
-
 	conf.end_msg ("enabled")
 	conf.env.append_unique ("IBEX_PLUGIN_USE_LIST", "ODE")
 	
@@ -66,9 +63,8 @@ def build (bld):
 		# build optim binary
 		bld.program (
 		target = "ibexode-attract-region",
-		# gch: i don't know if specifying "IBEXOPT" is necessary here
-		use = [ "ibex", "IBEXOPT" ], # add dependency on ibex library
+		use = [ "ibex" ], # add dependency on ibex library
 		# note: the two other executables are not installed by default
-		source = bld.path.ant_glob ("main/ibexode-attract-region.cpp"),
+		source = bld.path.ant_glob ("src/bin/ibexode-attract-region.cpp"),
 		install_path = bld.env.BINDIR,
 		)
