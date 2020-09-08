@@ -111,7 +111,7 @@ void P_StructLyapunov::end() {
 	//	if (!x_cst_found)
 	//		throw SyntaxError("input file must contain a constant named \"x\"");
 
-	parser::P_SysGenerator(scopes).generate(source,theta_sys);
+	parser::P_SysGenerator(scopes).generate(source, theta_sys, ExprNode::default_simpl_level);
 
 	/* x declared as a variable */
 	// size of x

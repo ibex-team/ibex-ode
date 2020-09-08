@@ -103,7 +103,7 @@ void AttractionRegion::init_vdot(Function& vdot, const IntervalVector& center) {
 	varcopy(f.args(), args);
 	const ExprSymbol& x=args[0];
 
-	 vdot.init(args,(dv(x-center)*f((const Array<const ExprNode>&) args)).simplify(),"vdot");
+	 vdot.init(args,(dv(x-center)*f((const Array<const ExprNode>&) args)).simplify(ExprNode::default_simpl_level),"vdot");
 }
 
 void AttractionRegion::init_vddot() {
@@ -121,7 +121,7 @@ void AttractionRegion::init_vddot() {
 	}
 	const ExprVector& v=ExprVector::new_col(a);
 
-	vddot.init(args,v.simplify());
+	vddot.init(args,v.simplify(ExprNode::default_simpl_level));
 }
 
 bool AttractionRegion::is_pos_def(const IntervalMatrix& Q) {
@@ -320,7 +320,7 @@ Interval AttractionRegion::find_level_set_optim(double cmin, double cmax, double
 	garbage.set_ref(0,pos_lie_ctr.e);
 	fac.add_ctr(pos_lie_ctr);
 
-	ExprCtr level_set_ctr(c-v(u).simplify(),EQ);
+	ExprCtr level_set_ctr(c-v(u).simplify(ExprNode::default_simpl_level),EQ);
 
 	garbage.set_ref(1,level_set_ctr.e);
 	fac.add_ctr(level_set_ctr);
