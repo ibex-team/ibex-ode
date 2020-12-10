@@ -8,6 +8,8 @@ def options (opt):
 	opt.add_option ("--with-ode", action="store_true",
 			dest="WITH_ODE", help = "Use ODE plugin")
 
+	opt.plugins["ode"] = "WITH_ODE"
+	
 ######################
 ##### configure ######
 ######################
